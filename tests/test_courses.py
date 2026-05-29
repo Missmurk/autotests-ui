@@ -5,6 +5,7 @@ from playwright.sync_api import sync_playwright, expect
 @pytest.mark.courses
 @pytest.mark.regression
 def test_empty_courses_list(chromium_page_with_state):
+        chromium_page_with_state.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
         # Проверка элементов на странице
         courses_title_text = chromium_page_with_state.get_by_test_id('courses-list-toolbar-title-text')
         expect(courses_title_text).to_be_visible()
